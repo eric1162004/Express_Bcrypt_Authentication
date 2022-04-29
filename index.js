@@ -40,12 +40,12 @@ app.post("/users/login", async (req, res) => {
     // compare the password given by the client and the hashed password in the server
     // bcrypt.compare(PLAIN_PASSWORD, ENCRYPTED_PASSWORD)
     if (await bcrypt.compare(req.body.password, user.password)) {
-      res.send("success!");
+      res.send("Success!");
     } else {
       res.send("Not authenticated");
     }
   } else {
-    res.status(400).send("cannot find user");
+    res.status(400).send("Cannot find user");
   }
 });
 
